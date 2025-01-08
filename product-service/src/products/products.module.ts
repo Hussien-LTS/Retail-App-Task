@@ -6,11 +6,7 @@ import { Product } from './product.model';
 import { HttpModule } from '@nestjs/axios';
 import { ConfigModule } from '@nestjs/config';
 @Module({
-  imports: [
-    SequelizeModule.forFeature([Product]),
-    HttpModule, // This is to use HttpService for making requests to the product service
-    ConfigModule,
-  ],
+  imports: [SequelizeModule.forFeature([Product]), HttpModule, ConfigModule],
   controllers: [ProductsController],
   providers: [ProductsService],
 })
