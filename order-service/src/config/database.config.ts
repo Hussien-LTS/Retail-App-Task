@@ -5,7 +5,7 @@ import {
   SequelizeModuleOptions,
 } from '@nestjs/sequelize';
 import { Sequelize } from 'sequelize-typescript';
-import { Product } from 'src/products/product.model';
+import { Order } from 'src/orders/order.model';
 
 @Injectable()
 export class DatabaseConfig implements SequelizeOptionsFactory {
@@ -41,7 +41,7 @@ export class DatabaseConfig implements SequelizeOptionsFactory {
       username: this.configService.get('DATABASE_USER'),
       password: this.configService.get('DATABASE_PASSWORD'),
       database: targetDatabase,
-      models: [Product],
+      models: [Order],
       synchronize: true,
       autoLoadModels: true,
       logging: false,
